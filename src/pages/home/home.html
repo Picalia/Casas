@@ -1,14 +1,28 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Encuentra una casa 
-    </ion-title>
-  </ion-navbar>
+  <ion-toolbar>
+    <ion-title style = "background-color: #D4BB94">Casas</ion-title>
+    <ion-buttons end>
+      <button (click) = "Clickfavo()" style = "color: #5C3F12" ion-button icon-only color="royal">
+        <ion-icon name= "heart" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style = "background-color: antiquewhite" >
   
+  <ion-card *ngFor = "let c of casas">
+
+    <ion-card-header>
+      {{c.nombre}}
+    </ion-card-header>
+
+    <img (click) = "Clickinfo(c)" [src] = c.imagen >
   <p>
-    
+    {{c.precio}}
   </p>
+  </ion-card>
 </ion-content>
+
+
+
